@@ -1,0 +1,44 @@
+#include <stdio.h>
+int vbencode(int);
+int dtb(int);
+int main(void) 
+{
+int num,i;
+printf("Enter a number to encode\n");
+scanf("%d\n", &a);
+num= vbencode(a);
+printf("The Varibale Byte encoding of %d is %d", a, num);
+}
+
+int vbencode(int a)
+{
+  int n,r,b,bin;
+  n=a;
+  if(a<=127)
+  {
+    bin=dtb(a);
+  }
+  else
+  {
+    while(a!=0)
+    {
+     r= a % 128;
+     a= a/128;
+     binr= dtb(r);
+    }
+  }
+}
+
+int dtb(int a)
+{
+  long long binaryNumber = 0;
+    int remainder, i = 1, step = 1;
+    while (n!=0)
+    {
+        remainder = n%2;
+        n /= 2;
+        binaryNumber += remainder*i;
+        i *= 10;
+    }
+    return binaryNumber;
+}
